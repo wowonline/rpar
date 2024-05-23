@@ -15,7 +15,7 @@ use rayon::prelude::*;
 //                   or
 //      cargo run -- -t 10 -s -- ls -l
 // 2)
-//      ./rpar -t
+//      ./rpar -t 1 -u -- curl www.google.com
 
 // rpar arguments:
 //
