@@ -2,16 +2,18 @@ pub struct Cli {
     pub rpar_times: usize,
     pub rpar_silent: bool,
     pub parallel: bool,
+    pub to_benchmark: bool,
     pub command: String,
     pub command_args: Vec<String>,
 }
 
 impl Cli {
-    pub fn get_args(&self) -> (usize, bool, bool, &String, &Vec<String>) {
+    pub fn get_args(&self) -> (usize, bool, bool, bool, &String, &Vec<String>) {
         (
             self.rpar_times,
             self.rpar_silent,
             self.parallel,
+            self.to_benchmark,
             &self.command,
             &self.command_args,
         )
@@ -22,6 +24,7 @@ impl Cli {
             rpar_times: 1,
             rpar_silent: false,
             parallel: true,
+            to_benchmark: false,
             command: String::new(),
             command_args: vec![],
         };
@@ -46,6 +49,10 @@ impl Cli {
             if arg == "-u" || arg == "--unparallel" {
                 self.parallel = false;
                 println!("unparallel!");
+            }
+            if arg == "-b" || arg == "--to_benchmark" {
+                self.to_benchmark = true;
+                println!("to_benchmark!");
             }
         }
     }

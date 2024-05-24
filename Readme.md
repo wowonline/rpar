@@ -28,4 +28,7 @@ arg  --silent        /  -s     - to suppress output.
 
 arg  --unparallel    /  -u     - to execute command in sequential way.
                                  Default: command is executed in a parallel way
+
+arg  --to_benchmark  /  -b     - to measure time from start to end of executor's work.
+                                 Default: time is not measured
 ```
