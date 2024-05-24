@@ -7,7 +7,7 @@ rpar [RPAR ARGUMENTS] -- COMMAND [COMMAND ARGUMENTS]
 
 1)
 ```bash
-    ./rpar --times 10 -silent -- ls -l
+    ./rpar --times 10 --silent -- ls -l
 ```
 or
 ```bash
@@ -15,7 +15,7 @@ or
 ```
 2)
 ```bash
-    ./rpar -t 1 -u -- curl www.google.com
+    ./rpar -t 1 -u -b -- curl www.google.com
 ```
 
 ### rpar arguments:
