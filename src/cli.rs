@@ -7,23 +7,30 @@ pub struct Cli {
 }
 
 impl Cli {
-    pub fn new() -> Self {
-        Cli {
+    pub fn get_args(&self) -> (usize, bool, bool, &String, &Vec<String>) {
+        (
+            self.rpar_times,
+            self.rpar_silent,
+            self.parallel,
+            &self.command,
+            &self.command_args,
+        )
+    }
+
+    pub fn parse_args(args: Vec<String>) -> Cli {
+        let mut cli = Cli {
             rpar_times: 1,
             rpar_silent: false,
             parallel: true,
             command: String::new(),
             command_args: vec![],
-        }
-    }
-
-    pub fn parse_args(&mut self, args: Vec<String>) -> &mut Self {
+        };
         let idx = args.iter().position(|arg| arg == "--").expect(
             "Can't find '--' between rpar and command arguments. Consider looking at 'rpar -h.'",
         );
-        self.parse_rpar_args(args[..idx].to_vec());
-        self.parse_command_args(args[idx + 1..].to_vec());
-        self
+        cli.parse_rpar_args(args[..idx].to_vec());
+        cli.parse_command_args(args[idx + 1..].to_vec());
+        cli
     }
 
     fn parse_rpar_args(&mut self, args: Vec<String>) {
