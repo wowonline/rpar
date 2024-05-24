@@ -7,7 +7,7 @@ rpar [RPAR ARGUMENTS] -- COMMAND [COMMAND ARGUMENTS]
 
 1)
 ```bash
-    ./rpar -t 10 -s -- ls -l
+    ./rpar --times 10 -silent -- ls -l
 ```
 or
 ```bash
