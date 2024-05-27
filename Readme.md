@@ -1,3 +1,8 @@
+### rpar
+**rp**ar - **R**ust **P**arallel command executor
+
+Utility used for executing a single linux/macOS command multiple times in a parallel way
+
 ### Usage of command:
 ```
 rpar [RPAR ARGUMENTS] -- COMMAND [COMMAND ARGUMENTS]
